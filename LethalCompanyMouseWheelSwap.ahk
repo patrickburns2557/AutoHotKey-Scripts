@@ -4,5 +4,5 @@ SendMode "Event"
 
 #HotIf WinActive("Lethal Company")
 
-WheelDown:: Send "{WheelUp}"
-WheelUp:: Send "{WheelDown}"
+*WheelDown:: Send "{WheelUp}"
+*WheelUp:: Send "{WheelDown}"
