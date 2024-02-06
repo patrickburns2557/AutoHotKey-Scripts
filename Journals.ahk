@@ -9,6 +9,7 @@ User:= "NO USER ENTERED"
 PreviousClipboard := ""
 
 journals := ["ENTER", "JOURNAL", "LIST", "HERE"]
+journalsRemove := ["ENTER", "JOURNAL", "LIST", "TO", "REMOVE", "HERE"]
 
 
 ;;Win+A for Add
@@ -16,11 +17,21 @@ journals := ["ENTER", "JOURNAL", "LIST", "HERE"]
 {
     ;Get mnemonic from user
     User := GetMnemonic("add")
-    
+
     ;Loop through the user list from each journal and add the specified user to each list
     for index, value in journals
         {
             Send value "{Enter}"
+            
+            ;Check to see if the "This journal is inactive" window pops up by using the clipboard
+            A_Clipboard := ""
+            Send "^c" ; If the journal is inactive, the "This journal is inactive" popup will be there, and nothing is copied,
+                      ; otherwise, the "Active" entry box will be selected and "Y" will be copied
+            if not(A_Clipboard == "Y" or A_Clipboard == "N") ;popup window is present
+                {
+                    Send "{Enter}" ; press enter to dismiss popup
+                }
+            
             Send "{Tab}{Tab}" ;move past Active and Name text boxes
             
             ;test each text box until one longer than a length of 1 is found. This is the start of the user list
@@ -54,9 +65,19 @@ journals := ["ENTER", "JOURNAL", "LIST", "HERE"]
     User := GetMnemonic("remove")
 
     ;Loop through user list for each journal, find the specified user, and remove them from each of the lists
-    for index, value in journals
+    for index, value in journalsRemove
         {
             Send value "{Enter}"
+            
+            ;Check to see if the "This journal is inactive" window pops up by using the clipboard
+            A_Clipboard := ""
+            Send "^c" ; If the journal is inactive, the "This journal is inactive" popup will be there, and nothing is copied,
+                      ; otherwise, the "Active" entry box will be selected and "Y" will be copied
+            if not(A_Clipboard == "Y" or A_Clipboard == "N") ;popup window is present
+                {
+                    Send "{Enter}" ; press enter to dismiss popup
+                }
+            
             Send "{Tab}{Tab}" ;move past Active and Name text boxes
             
             ;test each text box until one longer than a length of 1 is found. This is the start of the user list
@@ -131,7 +152,7 @@ GetMnemonic(whichType)
                     ResponseMnemonic := InputBox("What is the mnemonic of the user?`n(CASE SENSITIVE)", "Modify User in Journals")
                 }
             
-
+                
             if (ResponseMnemonic.result == "Cancel") ;exit the program if they click "Cancel"
                 {
                     ExitApp
