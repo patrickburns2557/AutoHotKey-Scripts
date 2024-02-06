@@ -29,6 +29,7 @@ journalsRemove := ["ENTER", "JOURNAL", "LIST", "TO", "REMOVE", "HERE"]
                       ; otherwise, the "Active" entry box will be selected and "Y" will be copied
             if not(A_Clipboard == "Y" or A_Clipboard == "N") ;popup window is present
                 {
+                    Sleep 1000
                     Send "{Enter}" ; press enter to dismiss popup
                 }
             
@@ -55,6 +56,7 @@ journalsRemove := ["ENTER", "JOURNAL", "LIST", "TO", "REMOVE", "HERE"]
             KeyWait "F12", "D" ;Pause and allow user to press F12 instead of allowing the program to do it
             Sleep 1500 ;allow time for program to save before starting next loop
         }
+    MsgBox("Finished!", "Finished")
     ExitApp
 }
 
@@ -75,6 +77,7 @@ journalsRemove := ["ENTER", "JOURNAL", "LIST", "TO", "REMOVE", "HERE"]
                       ; otherwise, the "Active" entry box will be selected and "Y" will be copied
             if not(A_Clipboard == "Y" or A_Clipboard == "N") ;popup window is present
                 {
+                    Sleep 1000
                     Send "{Enter}" ; press enter to dismiss popup
                 }
             
@@ -124,6 +127,7 @@ journalsRemove := ["ENTER", "JOURNAL", "LIST", "TO", "REMOVE", "HERE"]
                 }
             
         }
+    MsgBox("Finished!", "Finished")
     ExitApp
 }
 
