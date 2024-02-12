@@ -1,5 +1,6 @@
 #Requires AutoHotkey v2.0
 #HotIf WinActive("ENTER WINDOW TITLE HERE") ;only allow hotkeys to work when inside the Journals window
+TraySetIcon("Journals.ico") ;source: https://icon-icons.com/icon/book-bookmark/34486
 
 SendMode "Event"
 SetKeyDelay 75 ; program starts missing inputs if it goes much faster than this
