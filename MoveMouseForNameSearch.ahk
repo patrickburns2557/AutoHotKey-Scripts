@@ -8,5 +8,5 @@ NumpadAdd::
     MouseClick()
     MouseMove(700, 40)
     Sleep(75)
-    MouseClick
+    MouseClick()
 }
