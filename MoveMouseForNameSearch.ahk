@@ -9,6 +9,19 @@ NumpadAdd::
     Sleep(75)
     MouseClick()
     MouseMove(700, 40)
-    Sleep(200)
+    Sleep(250)
+    MouseClick()
+}
+
+;Different window has slightly different button placement
+; this one needs more delay between clicks
+#HotIf WinActive("Users Lookup")
+NumpadAdd::
+{
+    MouseMove(1100, 345)
+    Sleep(75)
+    MouseClick()
+    MouseMove(700, 40)
+    Sleep(700)
     MouseClick()
 }
