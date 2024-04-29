@@ -4,6 +4,7 @@
 SetDefaultMouseSpeed(1)
 
 NumpadAdd::
+`::
 {
     MouseMove(1100, 290)
     Sleep(75)
@@ -17,6 +18,7 @@ NumpadAdd::
 ; this one needs more delay between clicks
 #HotIf WinActive("Users Lookup")
 NumpadAdd::
+`::
 {
     MouseMove(1100, 345)
     Sleep(75)
