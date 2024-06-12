@@ -27,3 +27,16 @@ NumpadAdd::
     Sleep(700)
     MouseClick()
 }
+
+;Different window has slightly different button placement
+#HotIf WinActive("Provider Lookup")
+NumpadAdd::
+`::
+{
+    MouseMove(1200, 380)
+    Sleep(75)
+    MouseClick()
+    MouseMove(800, 40)
+    Sleep(250)
+    MouseClick()
+}
