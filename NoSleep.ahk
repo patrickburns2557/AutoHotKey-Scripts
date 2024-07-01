@@ -18,6 +18,6 @@
 ;Will start immediately, w/o needing to press a keybind
 ;Loop
 ;{
-;    Send "{F15}"
+;    Send "{F16}"
 ;    Sleep 50000
 ;}
