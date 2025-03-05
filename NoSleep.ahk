@@ -10,7 +10,7 @@
 ;{
 ;    Loop
 ;        {
-;            Send "{F15}"
+;            Send "{F17}"
 ;            Sleep 50000
 ;        }    
 ;}
@@ -18,6 +18,6 @@
 ;Will start immediately, w/o needing to press a keybind
 ;Loop
 ;{
-;    Send "{F16}"
+;    Send "{F17}"
 ;    Sleep 50000
 ;}
