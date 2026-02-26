@@ -5,8 +5,10 @@ Loop
 {
 	;Only maximize if the window is found
     If WinExist("WindowName")
+    ;If WinExist("WindowName ahk_exe ProgramName.exe")  ;Search for window by program name as well if needed
     {
         WinMaximize("WindowName")
+        ;WinMaximize("WindowName ahk_exe ProgramName.exe")  ;Search for window by program name as well if needed
     }
     else
     {
