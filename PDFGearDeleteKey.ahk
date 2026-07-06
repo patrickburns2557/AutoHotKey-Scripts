@@ -1,10 +1,9 @@
 #Requires AutoHotkey v2.0
-
-#HotIf WinActive("ahk_exe pdfeditor.exe")
-
 ;Script to make the delete key delete the current page or selected pages in PDFGear.
 ;By default, the delete key does nothing, and to delete a page, there are 2 confirmation boxes you have to click through.
 
+
+#HotIf WinActive("ahk_exe pdfeditor.exe")
 CoordMode("Mouse", "Screen")
 SetDefaultMouseSpeed(1)
 Del::
