@@ -21,3 +21,12 @@
 ;    Send "{F17}"
 ;    Sleep 50000
 ;}
+
+;Will start immediately, w/o needing to press a keybind
+;Moves mouse one pixel to the right and then back every 5 minutes rather than sending keystroke
+;Loop
+;{
+;    MouseMove(1,0,1,"R")
+;    MouseMove(-1,0,1,"R")
+;    Sleep 300000
+;}
